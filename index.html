@@ -22,7 +22,7 @@
         <div class="nome-site">
             <a href="" class="nome-logo">
                 <img src="./img/foguete.png" alt="" class="logo icone-i">
-                <h3>siteNN</h3>
+                <h3>Todo List</h3>
             </a>
 
         </div>
@@ -33,29 +33,29 @@
 
                 <a href="#">
                     <img src="./img/foguete.png" class="icone-i" alt="">
-                    <h3>Grafico</h3>
+                    <h3>Objetivos</h3>
                 </a>
 
             </li>
             <li>
 
                 <a href="#">
-                    <img src="./img/foguete.png" class="icone-i" alt="">
-                    <h3>Grafico</h3>
+                    <img src="./img/teste.png" class="icone-i" alt="">
+                    <h3>Tarefas</h3>
                 </a>
 
             </li>
             <li>
                 <a href="#">
-                    <img src="./img/foguete.png" class="icone-i" alt="">
-                    <h3>Grafico</h3>
+                    <img src="./img/calendario.png" class="icone-i" alt="">
+                    <h3>Calendario</h3>
                 </a>
 
             </li>
             <li>
 
                 <a href="#">
-                    <img src="./img/foguete.png" class="icone-i" alt="">
+                    <img src="./img/apresentacao.png" class="icone-i" alt="">
                     <h3>Grafico</h3>
                 </a>
 
@@ -79,7 +79,7 @@
                         <img src="./img/economizar.png" class="icone-i" alt="">
                     </div>
                 </div>
-                <button class="btn-contato">contato</button>
+                <button class="btn-contato">Contato</button>
             </header>
         </section>
     </div>
@@ -87,15 +87,29 @@
 
 
     <div class="interface">
-        <section class="flex">
+        <section class="flex" id="tarefas">
+            <div class="editar-coluna">
+                <button class="btn btn-success btn-add">Adicionar</button>
+                <button class="btn btn-warning btn-editar">Editar</button>
+            </div>
+           
             <div class="columns">
 
                 <div class="column">
-                    <h2 class="column-title">FAZER</h2>
+                    
+                    <div class="top-column">
+                        <h2 class="column-title">FAZER</h2>
+                        <button class="fechar-column">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x" viewBox="3 3 10 10">
+                                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+                              </svg>
+                        </button>
+                    </div>
+                    
                     <section class="column-cards">
                         <div class="card1" draggable="true">
-
-                            <div class="button-todo">
+                            <h2 class="conteudo-card">Click duas vazes nas colunas e nos cards para descobrir outras funções!</h2>
+                            <div class="button-todo comprimir hidden">
                                 <button class="btn-todo gren">
                                     <i class="fa-solid fa-check"></i>
                                 </button>
@@ -110,14 +124,19 @@
 
                             </div>
                         </div>
-                        <div class="card1" draggable="true">
-                            
-                        </div>
+                       
                     </section>
                 </div>
 
                 <div class="column">
-                    <h2 class="column-title">FAZER</h2>
+                    <div class="top-column">
+                        <h2 class="column-title">FAZER</h2>
+                        <button class="fechar-column">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x" viewBox="3 3 10 10">
+                                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+                              </svg>
+                        </button>
+                    </div>
                     <section class="column-cards">
                         
                     </section>

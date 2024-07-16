@@ -50,17 +50,27 @@
 
 }
 
-.nav-elementos a{
-    text-decoration: none;
-    color: #333;
-    font-size: 1.3rem;
-    font-weight: 700;
-    display: flex;
-    
+i{
+    pointer-events: none;
 }
+
+.nav-elementos a{
+ text-decoration: none;
+ color: #333;
+ display: flex;
+ justify-content: left;
+ align-items: center;
+}
+
+.nome-site .nome-logo{
+    display: flex;
+    align-items: center;
+}
+
 
 .nav-elementos a h3, .nome-logo h3{
 margin-left: 1.5rem;
+font-size: 1.3rem;
 
 }
 
@@ -68,6 +78,10 @@ margin-left: 1.5rem;
     display: flex;
     color: #333;
     text-decoration: none;
+}
+
+#tarefas{
+    user-select: none;
 }
 
 /* ============== top ============== */
@@ -102,7 +116,7 @@ margin-left: 1.5rem;
 
 .elementos-left{
     justify-content:space-between;
-    width: 50%;
+    width: 56%;
 }
 
 .elementos-left h4{
@@ -114,11 +128,12 @@ margin-left: 1.5rem;
 .btn-contato{
     padding: 9px;
     width: 100px;
-    border-radius: 15px;
+    border-radius: 10px;
     background-color: rgb(27, 202, 255);
     border: none;
     scale: 1.2;
-    font-weight: 600;
+    font-weight: 400;
+    color: white;
 }
 
 /* =============== grid =============== */
@@ -136,18 +151,55 @@ margin-left: 1.5rem;
 }
 
 .columns .column{
-    background-color: #2993e952;
+    background-color: #f4f5f7;
     height: 92vh;
     flex: 1;
     border-radius: 20px;
    
 }
 
+.top-column{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px 40px;
+}
+
+.top-column button{
+    border: none;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #adadad50;
+    box-shadow: 0px 0px 5px 2px rgba(189, 189, 189, 0.726);
+}
+
+.top-column svg{
+    border: none;
+    color: white;
+    pointer-events: none;
+}
+
 .column-title{
-    padding: 40px 40px;
+    
     font-size: 20px;
     font-weight: 700;
-    color: rgb(0, 26, 56);
+    color: #4d5c76;
+    
+}
+
+.conteudo-card{
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #404c63;
+    padding: 10px;
+    pointer-events: none;/*lembrar disso*/
+    line-height: 22px;
+
+    
 }
 
 .column-cards{
@@ -165,16 +217,31 @@ gap: 15px;
     border-radius: 10px;
     width: 95%;
     background-color: white;
-    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.24);
+    box-shadow: -3px 5px 10px 1px rgba(0, 0, 0, 0.24);
     position: relative;
+    transition:all ease .3s;
+}
+
+.concluido{
+    background-color: #0a8b06ad;
+    transition: all ease .3s;
+}
+
+.concluido .conteudo-card{
+    color: rgba(255, 255, 255, 0.986);
+    font-weight: 500;
+    font-style: italic;
+    text-decoration: line-through;
 }
 
 .button-todo{
-    position: absolute;
-    width: 98%;
-    margin-top: 3.6rem;
+    position: absolute;/*absolute pode usar right top.....*/
+    right: 8px;
+    width: 90px;
+    bottom: 5px;
     display: flex;
     justify-content: right;
+   
 }
 
 .btn-todo{
@@ -197,4 +264,18 @@ gap: 15px;
 .gren{
     border: none;
     background-color: green;
+}
+
+
+.hidden .gren, .hidden .yellow, .hidden .red{
+transform: translateX(2rem);
+opacity: 0;
+}
+
+.editar-coluna{
+    margin-bottom: 2.5rem;
+}
+
+.btn{
+    width: 100px;
 }
