@@ -13,23 +13,30 @@
     height: 100vh;
     min-width: 280px;
     width: 5%;
-    box-shadow: 10px 0px 25px rgba(0, 0, 0, 0.116);
+    box-shadow: 10px 0px 25px rgba(0, 0, 0, 0.24);
     position: fixed;
 }
 
 .nome-site{
     padding: 40px 40px 40px;
     font-size: 1.5rem;
-    border-bottom: solid 1px #ccc;
+    border-bottom: solid 1px #000000;
     display: flex;
     justify-content: left;
     align-items: center;
+    box-shadow: 10px 0px 15px 0px rgba(0, 0, 0, 0.219);
+    background-color: #0f61beda;
     
 }
 
+
 .nav-elementos{
+    z-index: -1;
 
     height: 100%;
+    background-color: #0f61beda;
+    box-shadow: 10px 0px 15px 0px rgba(0, 0, 0, 0.24);
+    
     
 }
 
@@ -39,7 +46,6 @@
     flex-direction: row-reverse;
     justify-content: left;
     align-items: center;
-
     margin-bottom: solid 1px #b9b9b9;
     padding: 40px 40px 40px;
 
@@ -56,7 +62,7 @@ i{
 
 .nav-elementos a{
  text-decoration: none;
- color: #333;
+ color: #000000;
  display: flex;
  justify-content: left;
  align-items: center;
@@ -76,7 +82,7 @@ font-size: 1.3rem;
 
 .nome-logo{
     display: flex;
-    color: #333;
+    color: #000000;
     text-decoration: none;
 }
 
@@ -112,6 +118,7 @@ font-size: 1.3rem;
     justify-content: space-between;
     align-items: center;
     border-bottom: solid 1px #ccc;
+    z-index: -1;
 }
 
 .elementos-left{
@@ -129,7 +136,7 @@ font-size: 1.3rem;
     padding: 9px;
     width: 100px;
     border-radius: 10px;
-    background-color: rgb(27, 202, 255);
+    background-color: #0f61beda;
     border: none;
     scale: 1.2;
     font-weight: 400;
@@ -151,11 +158,15 @@ font-size: 1.3rem;
 }
 
 .columns .column{
-    background-color: #f4f5f7;
+    background-color: #0f61be80;
     height: 92vh;
     flex: 1;
     border-radius: 20px;
    
+}
+
+.border-select{
+    border: solid 3px #0f61beda;
 }
 
 .top-column{
@@ -173,8 +184,7 @@ font-size: 1.3rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #adadad50;
-    box-shadow: 0px 0px 5px 2px rgba(189, 189, 189, 0.726);
+    background-color: #0f61be49;
 }
 
 .top-column svg{
@@ -187,7 +197,7 @@ font-size: 1.3rem;
     
     font-size: 20px;
     font-weight: 700;
-    color: #4d5c76;
+    color: #222222;
     
 }
 
@@ -206,8 +216,7 @@ font-size: 1.3rem;
 
 display: flex;
 flex-direction: column;
-justify-content: center;
-gap: 15px;
+
 
 }
 
@@ -216,10 +225,11 @@ gap: 15px;
     min-height: 100px;
     border-radius: 10px;
     width: 95%;
-    background-color: white;
+    background-color: #ffffff;
     box-shadow: -3px 5px 10px 1px rgba(0, 0, 0, 0.24);
     position: relative;
     transition:all ease .3s;
+    margin-bottom: 15px;
 }
 
 .concluido{
@@ -238,7 +248,7 @@ gap: 15px;
     position: absolute;/*absolute pode usar right top.....*/
     right: 8px;
     width: 90px;
-    bottom: 5px;
+    bottom: 7px;
     display: flex;
     justify-content: right;
    
@@ -247,25 +257,28 @@ gap: 15px;
 .btn-todo{
     width: 30px;
     height: 30px;
-    border-radius: 50%;
+    border-radius: 5px;
 
 }
 
 .red{
     border: none;
-    background-color: rgb(206, 54, 54);
+    background-color: rgb(221, 29, 29);
 }
 
 .yellow{
     border: none;
-    background-color: rgb(230, 214, 0);
+    background-color: rgb(187, 190, 0);
 }
 
 .gren{
     border: none;
-    background-color: green;
+    background-color: rgb(27, 114, 27);
 }
 
+.hidden{
+    pointer-events: none;
+}
 
 .hidden .gren, .hidden .yellow, .hidden .red{
 transform: translateX(2rem);

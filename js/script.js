@@ -1,16 +1,22 @@
 const containerColumns = document.querySelector(".columns")
-const colunaCards = document.querySelector('.column-cards');
+const colunaCards = document.querySelectorAll('.column-cards');
 const btnAdd = document.querySelector('.btn-add');
 const btnEditarColuna = document.querySelector('.btn-editar');
 const btnExcluirColuna = document.querySelector('.btn-excluir')
 const coluna = document.querySelectorAll('.column')
 const card = document.querySelectorAll('.card1')
 const btnFecharColuna = document.querySelectorAll('.fechar-column');
-let cardCheck;
+let cardCheck, draggedCard;
 
 
 
 // ================== FUNÇÕES ==========================
+
+//assim que começar a arrastar
+const dragStart = ({target}) => {
+    draggedCard = target
+    console.log(draggedCard)
+}
 
 //create elementos
 const createEl = (tag, classe) => {
@@ -38,6 +44,14 @@ const addColumn = () => {
     colunaTitulo.contentEditable = 'true';
 
     btnFecharColumn.addEventListener('click', (e) => { btnExcluir(e) })
+    colunaTodo.addEventListener('dragover', dragOver)//dispara quando um elemento um elemento é arrastado por cima do column
+    colunaTodo.addEventListener('dragenter', dragEnter)//dispara quando entrar na area do elemento
+    colunaTodo.addEventListener('dragleave', dragLeave)
+    colunaTodo.addEventListener('drop', drop)//assim que um elemento é drop em cima
+    colunaTodo.addEventListener('dblclick', (e) => {
+        adicionarCard(e);
+    })
+
 
     topColumn.append(colunaTitulo)
     topColumn.append(btnFecharColumn)
@@ -78,6 +92,7 @@ if(e.target.classList.contains('column')){
     btnRed.innerHTML = '<i class="fa-solid fa-xmark"></i>';
 
     card.addEventListener('dblclick', mostrarCard)
+    
 
     containerButton.append(btnGreen)
     containerButton.append(btnYellow)
@@ -88,6 +103,8 @@ if(e.target.classList.contains('column')){
 
     const colunaCard = e.target.querySelector('.column-cards')
     card.setAttribute('draggable', 'true')
+
+    card.addEventListener('dragstart', dragStart)//assim que arrastar o elemento
 
     colunaCard.append(card)
     conteudo.focus()
@@ -156,6 +173,42 @@ const editarCard = (e) => {
     })
 }
 
+//dispara quando um elemento é arrastado por cima column
+const dragOver = (event) => {
+    event.preventDefault();
+    
+}
+
+//ao entrar na area no elemento
+const dragEnter = ({target}) => {
+
+    if(target.classList.contains('column')){
+        target.classList.add('border-select')
+    }
+}
+
+//ao sair da area no elemento
+const dragLeave = (e) => {
+    if(e.target.classList.contains('column')){
+        e.target.classList.remove('border-select')
+    }
+
+    
+}
+
+
+const drop = (e) => {
+
+    if(e.target.classList.contains('border-select')){
+        e.target.classList.remove('border-select')
+        e.target.append(draggedCard);
+    }
+
+
+ 
+}
+
+
 
 
 
@@ -196,11 +249,23 @@ if(elemento.classList.contains('yellow')){
 
 
 
+
+
+
+
+
 //adicinar um card
 for(const c of coluna){
     c.addEventListener('dblclick', (e) => {
         adicionarCard(e);
     })
+
+    c.addEventListener('dragover', dragOver)//dispara quando um elemento um elemento é arrastado por cima do column
+    c.addEventListener('dragenter', dragEnter)//dispara quando entrar na area do elemento
+    c.addEventListener('dragleave', dragLeave)//dispara quando sair da area do elemento
+    c.addEventListener('drop', drop)
+
+
 }
 
 //mostrar os botoes dos cards
@@ -208,6 +273,8 @@ for(const x of card){
     x.addEventListener('dblclick', (e) => {
         mostrarCard(e)
     })
+
+    x.addEventListener('dragstart', dragStart)
 }
 
 for(const x of btnFecharColuna){
