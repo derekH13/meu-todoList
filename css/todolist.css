@@ -8,11 +8,15 @@
 .ladding-page{
     height: 100%;
     width: calc(100% - 280px);
-    background-image: url('/img/FUNDO-TODOLIST.png');
+    overflow: hidden;
     background-size: cover;
     background-repeat: no-repeat;
     position: absolute;
     opacity: .7;
+}
+
+.ladding-page img{
+height: 100%;
 }
 
 .conteudo-laddin{
