@@ -12,7 +12,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     position: absolute;
-    opacity: .8;
+    opacity: .7;
 }
 
 .conteudo-laddin{
@@ -58,6 +58,13 @@ box-shadow: 6px 8px 0px 0px white;
 font-size: 25px;
 font-weight: 700;
 color: white;
+transition: .3s;
+
+}
+
+.btn-ladding button:hover{
+    transform: scale(.98);
+    box-shadow: 2px 2px 0px 0px white;
 
 }
 

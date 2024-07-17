@@ -70,6 +70,7 @@ i{
 
 .nome-site .nome-logo{
     display: flex;
+    
     align-items: center;
 }
 
@@ -77,7 +78,21 @@ i{
 .nav-elementos a h3, .nome-logo h3{
 margin-left: 1.5rem;
 font-size: 1.3rem;
+transition: ease .3s;
 
+}
+
+.nav-elementos a h3:hover, .nome-logo h3:hover{
+
+color: white;
+transform: scale(0.95);
+
+
+}
+
+.nome-logo h3{
+    font-weight: 700;
+    font-size: 25px;
 }
 
 .nome-logo{
@@ -141,8 +156,14 @@ font-size: 1.3rem;
     scale: 1.2;
     font-weight: 400;
     color: white;
+    transition: .3s;
 }
 
+.btn-contato:hover{
+    transform: scale(.98);
+    box-shadow: 0px 0px 10px 1px #58a6ff75;
+    opacity: .9;
+}
 /* =============== grid =============== */
 
 .flex{
